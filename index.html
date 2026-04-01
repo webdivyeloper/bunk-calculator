@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bunk Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-badge">Engineering Student Toolkit</div>
+            <h1>Bunk Calculator</h1>
+            <p class="subtitle">Your attendance survival toolkit</p>
+        </header>
+        <main>
+            <form id="calculator-form">
+                <div class="input-group">
+                    <label for="attendance">Attendance %</label>
+                    <input type="number" id="attendance" placeholder="e.g. 61.11" step="0.01" min="0" max="100" required>
+                </div>
+                <div class="input-group">
+                    <label for="classes-conducted">Classes Conducted</label>
+                    <input type="number" id="classes-conducted" placeholder="e.g. 18" step="1" min="0" required>
+                </div>
+                <button type="submit" class="calculate-btn">Calculate →</button>
+            </form>
+
+            <div id="results" class="results hidden">
+                <div class="status-bar" id="status-bar">
+                    <img id="status-gif" src="" alt="" class="status-gif-bg">
+                    <div class="status-overlay" id="status-overlay"></div>
+                    <div class="status-content">
+                        <span id="status-percentage" class="status-percentage">--%</span>
+                        <span id="meme-caption" class="status-message">-</span>
+                    </div>
+                </div>
+
+                <div class="results-grid">
+                    <div class="result-card" id="card-missed">
+                        <h3>Classes Missed</h3>
+                        <p id="classes-missed" class="result-value">-</p>
+                    </div>
+                    <div class="result-card" id="card-bunks">
+                        <h3>Safe Bunks Left</h3>
+                        <p id="safe-bunks" class="result-value">-</p>
+                    </div>
+                    <div class="result-card" id="card-recovery">
+                        <h3>Classes to Recover</h3>
+                        <p id="recovery-count" class="result-value">-</p>
+                    </div>
+                    <div class="result-card" id="card-next">
+                        <h3>If You Bunk Next</h3>
+                        <p id="next-bunk" class="result-value">-</p>
+                    </div>
+                </div>
+
+                <div class="what-if-section">
+                    <h3>What if you attend next <span id="slider-value">15</span> classes?</h3>
+                    <input type="range" id="what-if-slider" min="1" max="30" value="15" class="slider">
+                    <div class="what-if-result">
+                        <span id="what-if-attendance" class="result-value">--%</span>
+                        <span id="what-if-status" class="result-status">-</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
