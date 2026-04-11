@@ -58,7 +58,11 @@ const sliderValueDisplay = document.getElementById('slider-value');
 let currentAttendance = null;
 let currentClassesConducted = null;
 
-form.addEventListener('submit', (e) => { e.preventDefault(); calculateResults(); });
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  gtag('event', 'calculate_clicked');
+  calculateResults();
+});
 whatIfSlider.addEventListener('input', (e) => {
     sliderValueDisplay.textContent = e.target.value;
     updateWhatIfResults();
